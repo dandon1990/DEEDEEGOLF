@@ -33,8 +33,13 @@
                 {% if product.ball_softness %}
                     <p class="mt-2 mb-0">Ball type:</p>
                     <small class="text-muted mt-0">{{ product.get_ball_softness_display }}</small>
-                {% else %}
-                    <small class="text-muted"></small>
+                {% endif %}
+                {% if product.category %}
+                    <p class="small mt-1 mb-0">
+                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                        </a>
+                    </p>
                 {% endif %}
             </div>
         </div>
