@@ -76,6 +76,15 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
+/*  Back to top button */
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
