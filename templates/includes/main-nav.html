@@ -17,10 +17,11 @@
                 Golf Clubs
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Drivers</a>
-                <a href="" class="dropdown-item">Irons</a>
-                <a href="" class="dropdown-item">Wedges</a>
-                <a href="" class="dropdown-item">Putters</a>
+                <a href="{% url 'products' %}?category=drivers,irons,wedges,putters " class="dropdown-item">All Golf Clubs</a>
+                <a href="{% url 'products' %}?category=drivers" class="dropdown-item">Drivers</a>
+                <a href="{% url 'products' %}?category=irons" class="dropdown-item">Irons</a>
+                <a href="{% url 'products' %}?category=wedges" class="dropdown-item">Wedges</a>
+                <a href="{% url 'products' %}?category=putters" class="dropdown-item">Putters</a>
             </div>
         </li>
 
@@ -29,9 +30,9 @@
                 Golf Balls
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Pro Balls</a>
-                <a href="" class="dropdown-item">Amateur Balls</a>
-                <a href="" class="dropdown-item">All Golf Balls</a>
+                <a href="{% url 'products' %}?category=golf_balls_soft" class="dropdown-item">Pro Balls</a>
+                <a href="{% url 'products' %}?category=golf_balls_hard" class="dropdown-item">Amateur Balls</a>
+                <a href="{% url 'products' %}?category=golf_balls_soft,golf_balls_hard" class="dropdown-item">All Golf Balls</a>
             </div>
         </li>
 
@@ -40,10 +41,10 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Gloves</a>
-                <a href="" class="dropdown-item">Tees</a>
-                <a href="" class="dropdown-item">Misc</a>
-                <a href="" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=gloves" class="dropdown-item">Gloves</a>
+                <a href="{% url 'products' %}?category=tees" class="dropdown-item">Tees</a>
+                <a href="{% url 'products' %}?category=misc" class="dropdown-item">Misc</a>
+                <a href="{% url 'products' %}?category=gloves,tees,misc" class="dropdown-item">All Accessories</a>
             </div>
         </li>
     </ul>
