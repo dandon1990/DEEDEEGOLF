@@ -59,6 +59,20 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+} 
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
+.mobile-top-logo {
+    background: white;
 }
 
 /* -------------------------------- Media Queries */
