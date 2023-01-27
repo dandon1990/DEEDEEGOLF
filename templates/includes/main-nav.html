@@ -1,50 +1,50 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=brand&direction=asc" class="dropdown-item ">By Brand</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+            <div class="dropdown-menu bg-dark border-0" aria-labelledby="all-products-link text-white">
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item text-white">By Price</a>
+                <a href="{% url 'products' %}?sort=brand&direction=asc" class="dropdown-item text-white">By Brand</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item text-white">By Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item text-white">All Products</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Golf Clubs
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=drivers,irons,wedges,putters " class="dropdown-item">All Golf Clubs</a>
-                <a href="{% url 'products' %}?category=drivers" class="dropdown-item">Drivers</a>
-                <a href="{% url 'products' %}?category=irons" class="dropdown-item">Irons</a>
-                <a href="{% url 'products' %}?category=wedges" class="dropdown-item">Wedges</a>
-                <a href="{% url 'products' %}?category=putters" class="dropdown-item">Putters</a>
+            <div class="dropdown-menu bg-dark border-0" aria-labelledby="clothing-link">
+                <a href="{% url 'products' %}?category=drivers,irons,wedges,putters " class="dropdown-item text-white">All Golf Clubs</a>
+                <a href="{% url 'products' %}?category=drivers" class="dropdown-item text-white">Drivers</a>
+                <a href="{% url 'products' %}?category=irons" class="dropdown-item text-white">Irons</a>
+                <a href="{% url 'products' %}?category=wedges" class="dropdown-item text-white">Wedges</a>
+                <a href="{% url 'products' %}?category=putters" class="dropdown-item text-white">Putters</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Golf Balls
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}?category=golf_balls_soft" class="dropdown-item">Pro Balls</a>
-                <a href="{% url 'products' %}?category=golf_balls_hard" class="dropdown-item">Amateur Balls</a>
-                <a href="{% url 'products' %}?category=golf_balls_soft,golf_balls_hard" class="dropdown-item">All Golf Balls</a>
+            <div class="dropdown-menu bg-dark border-0" aria-labelledby="homeware-link">
+                <a href="{% url 'products' %}?category=golf_balls_soft" class="dropdown-item text-white">Pro Balls</a>
+                <a href="{% url 'products' %}?category=golf_balls_hard" class="dropdown-item text-white">Amateur Balls</a>
+                <a href="{% url 'products' %}?category=golf_balls_soft,golf_balls_hard" class="dropdown-item text-white">All Golf Balls</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Accessories
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=gloves" class="dropdown-item">Gloves</a>
-                <a href="{% url 'products' %}?category=tees" class="dropdown-item">Tees</a>
-                <a href="{% url 'products' %}?category=misc" class="dropdown-item">Misc</a>
-                <a href="{% url 'products' %}?category=gloves,tees,misc" class="dropdown-item">All Accessories</a>
+            <div class="dropdown-menu bg-dark border-0" aria-labelledby="specials-link">
+                <a href="{% url 'products' %}?category=gloves" class="dropdown-item text-white">Gloves</a>
+                <a href="{% url 'products' %}?category=tees" class="dropdown-item text-white">Tees</a>
+                <a href="{% url 'products' %}?category=misc" class="dropdown-item text-white">Misc</a>
+                <a href="{% url 'products' %}?category=gloves,tees,misc" class="dropdown-item text-white">All Accessories</a>
             </div>
         </li>
     </ul>
