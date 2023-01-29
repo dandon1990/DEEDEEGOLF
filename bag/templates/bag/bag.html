@@ -49,10 +49,10 @@
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                         <p class="my-0 small text-muted">Brand: {{ item.product.brand }}</p>
                                         {% if item.product.driver_loft %}
-                                        <p class="my-0 small text-muted">Loft: {{ item.size }}</p>
+                                        <p class="my-0 small text-muted">Loft: {{ item.loft }}</p>
                                         {% endif %}
                                         {% if item.product.wedge_loft %}
-                                        <p class="my-0 small text-muted">Loft: {{ item.size }}</p>
+                                        <p class="my-0 small text-muted">Loft: {{ item.loft }}</p>
                                         {% endif %}
                                         <p class="my-0 small text-muted">Category: {{ item.product.category.friendly_name }}</p>   
                                     </td>

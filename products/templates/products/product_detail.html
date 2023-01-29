@@ -44,12 +44,22 @@
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
+                        {% if product.dexterity %}
+                        <div class="col-8 mb-1">
+                          <p><strong>Dexterity:</strong></p>
+                            <select class="form-control w-50" name="dexterity" id='id_dexterity' required>
+                                <option selected>Select dexterity</option>
+                                <option value="right">Right-handed</option>
+                                <option value="left">Left-handed</option>
+                            </select>
+                        </div>
+                        {% endif %}
                         {% with product.driver_loft as d %}
                         {% with product.wedge_loft as w %}
                         {% if d %}
-                        <div class="col-12">
+                        <div class="col-8 mt-1">
                             <p><strong>Loft:</strong></p>
-                            <select class="form-control rounded-0 w-50" name="product_loft" id='id_product_d_loft' required>
+                            <select class="form-control w-50" name="product_loft" id='id_product_d_loft' required>
                                 <option selected>Select loft</option>
                                 <option value="8">8&#176;</option>
                                 <option value="9">9&#176;</option>
@@ -59,9 +69,9 @@
                         </div>
                         {% endif %}
                         {% if w %}
-                        <div class="col-12">
+                        <div class="col-lg-8">
                             <p><strong>Loft:</strong></p>
-                            <select class="form-control rounded-0 w-50" name="product_loft" id='id_product_w_loft' required>
+                            <select class="form-control w-50" name="product_loft" id='id_product_w_loft' required>
                                 <option selected>Select loft</option>
                                 <option value="50">50&#176;</option>
                                 <option value="52">52&#176;</option>
