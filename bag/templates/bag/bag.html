@@ -117,7 +117,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 bg-info text-right pt-3 pb-5 rounded">
+                    <div class="col-12 bg-secondary text-right pt-3 pb-5 rounded">
                         <h3 class="text-white text-center my-4">Order Summary:</h3>
                         <hr class=" w-50 my-1">
                         <h6 class="text-white mr-4 my-4"><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
@@ -126,12 +126,12 @@
                         <hr class=" w-50 my-2">
                         <h4 class="text-white mr-4 my-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
                         {% if free_delivery_delta > 0 %}
-                            <p class="mb-1 text-danger">
+                            <p class="mb-1 text-warning">
                                 You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
                             </p>
                         {% endif %}
                         <div class="text-right mr-4">
-                            <a href="" class="btn btn-dark text-white btn-outline-success btn-lg checkout-btn">
+                            <a href="" class="btn btn-dark text-white btn-outline-success border-0 shadow-sm btn-lg checkout-btn">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
