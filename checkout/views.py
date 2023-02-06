@@ -41,7 +41,7 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['clubs_by_loft'].items():
+                        for loft, quantity in item_data['clubs_by_loft'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
