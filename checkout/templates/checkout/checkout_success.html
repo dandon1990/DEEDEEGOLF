@@ -196,6 +196,18 @@
                 </div>
             </div>
         </div>
+        {% if from_profile %}
+        <div class="row">
+            <div class="col-12 col-lg-7 mb-5 text-right">
+                <a href="{% url 'profile' %}" class="btn btn-black">
+                    <span class="icon">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Profile</span>
+                </a>
+            </div>
+        </div>
+        {% endif %}
 {% endblock %}
 
 {% block postloadjs %}
