@@ -44,16 +44,6 @@
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
-                        {% if product.dexterity %}
-                        <div class="col-8 mb-1">
-                          <p><strong>Dexterity:</strong></p>
-                            <select class="form-control w-50" name="dexterity" id='id_dexterity' required>
-                                <option selected>Select dexterity</option>
-                                <option value="r">Right-handed</option>
-                                <option value="l">Left-handed</option>
-                            </select>
-                        </div>
-                        {% endif %}
                         {% with product.driver_loft as d %}
                         {% with product.wedge_loft as w %}
                         {% if d %}
