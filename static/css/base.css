@@ -256,6 +256,10 @@ a.category-badge > span.badge:hover {
 
 }
 
+#back-to-top {
+    z-index: 999999;
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
