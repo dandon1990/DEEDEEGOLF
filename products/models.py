@@ -26,7 +26,6 @@ class Product(models.Model):
     brand = models.CharField(max_length=254)
     driver_loft = models.BooleanField(default=False, null=True, blank=True)
     wedge_loft = models.BooleanField(default=False, null=True, blank=True)
-    dexterity = models.BooleanField(default=False, null=True, blank=True)
     ball_softness = models.IntegerField(choices=BALL_COVER, default=0, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
