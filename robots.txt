@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://deedeegolf.herokuapp.com/sitemap.xml
