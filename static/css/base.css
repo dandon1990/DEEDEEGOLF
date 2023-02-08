@@ -9,7 +9,9 @@ body {
     color: #555;
     font-family: 'Lato';
 }
-
+.toggle-icon {
+    font-size: 2.5rem;
+}
 /* from Bulma */
 .icon {
     align-items: center;
@@ -227,6 +229,33 @@ a.category-badge > span.badge:hover {
 
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
+}
+
+/* Product form */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+
 }
 
 /* fixed top navbar only on medium and up */
