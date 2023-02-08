@@ -38,6 +38,3 @@ def create_or_update_userr_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
-
-
-
