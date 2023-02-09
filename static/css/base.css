@@ -260,6 +260,12 @@ a.category-badge > span.badge:hover {
     z-index: 999999;
 }
 
+.footer-links,
+.footer-links:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -327,5 +333,9 @@ a.category-badge > span.badge:hover {
 
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+
+    footer {
+        font-size: .75rem;
     }
 }
