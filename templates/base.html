@@ -16,7 +16,7 @@
   {% endblock %}
 
   {% block corecss %}
-  <link rel="icon" href="{% static 'css/favicon/golf-ball-with-dents.png' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'css/favicon/golf-ball-with-dents.png' %}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
@@ -35,6 +35,8 @@
     </script>
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
+    <!--MailChimp-->
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/be90dd4a09e7942039037f09b/d776fec02f1cc9dbe3350409b.js");</script>
   {% endblock%}
 
   {% block extra_js %}
@@ -127,6 +129,7 @@
     </div>
 </header>
 
+
 {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -151,13 +154,30 @@
   {% block content %}
   {% endblock %}
 
+
   {% block postloadjs %}
   <script type="text/javascript">
     $('.toast').toast('show');
   </script>
   {% endblock %}
 
-
+    <!-- Footer -->
+    <footer class="w-100 py-4 flex-shrink-0 bg-dark mt-3">
+        <div class="row">
+            <div class="col-4 text-white text-center">
+                &copy;
+                <i class="fa-solid fa-golf-ball-tee"></i>
+                DEEDEEGOLF
+            </div>
+            <div class="col-4 text-white">
+                <a href="https://www.facebook.com/profile.php?id=100089920762398" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+            </div>
+            <div class="col-4 text-white">
+                Sign-up to our Newsletter!
+            </div>
+        </div>
+    </footer>
+<!-- /.footer -->
 </body>
 
 </html>
