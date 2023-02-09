@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Comment
+from .forms import ProductForm, CommentForm
 
 
 def all_products(request):
@@ -69,9 +69,23 @@ def product_detail(request, product_id):
     information about the product"""
 
     product = get_object_or_404(Product, pk=product_id)
+    comments = product.comments.order_by("-created_on")
+    form = CommentForm()
+
+    if request.method == 'POST':
+
+        form = CommentForm(data=request.POST)
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.product = product
+            comment.save()
 
     context = {
-        'product': product
+        'product': product,
+        'form': form,
+        'comments': comments,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -82,6 +96,7 @@ def add_product(request):
     """
     Add a product to the store
     """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that!')
         return redirect(reverse('home'))
@@ -111,6 +126,7 @@ def edit_product(request, product_id):
     """
     Edit a product from the store
     """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that!')
         return redirect(reverse('home'))
@@ -141,6 +157,7 @@ def edit_product(request, product_id):
 @login_required
 def delete_product(request, product_id):
     """Delete a porduct from the store"""
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that!')
         return redirect(reverse('home'))
@@ -149,3 +166,38 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Succesfully deleted product!')
     return redirect(reverse('products'))
+
+
+@login_required
+def update_comment(request, pk):
+    """ Update comments on the products detail page"""
+
+    comment = get_object_or_404(Comment, pk=pk)
+    form_class = CommentForm
+    context_object_name = 'comment'
+    template_name = 'product_detail.html'
+
+    if request.method == 'POST':
+        # Update the comment with the new data
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+
+    return redirect(reverse('product_detail', args=[comment.product.id]))
+
+
+@login_required
+def delete_comment(request, pk):
+    """ Delete comments on product_detail.html """
+
+    comment = get_object_or_404(Comment, pk=pk)
+    form_class = CommentForm
+    template_name = 'product_detail.html'
+    context_object_name = 'comment'
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        post = comment.product
+        comment.delete()
+        # Return a success URL
+        return redirect(reverse('product_detail', args=[post.id]))
